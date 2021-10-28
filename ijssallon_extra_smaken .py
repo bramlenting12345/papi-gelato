@@ -3,6 +3,11 @@ import os
 import time
 
 Gekozen_smaken=[]
+verpakking_bolletjes = "geen"
+aantal_bolletjes = 0
+totaal_bolletjes = 0
+totaal_bakjes = 0
+totaal_hoorntjes = 0
 
 kies_smaken = """------------------------------------------------------------------------------------------------------------
 
@@ -24,33 +29,33 @@ def timer_5():
 
 
 
-def welkom():                                                                                       # def welom 
+def welkom(verpakking_bolletjes,aantal_bolletjes):                                                                                       # def welom 
     clear_screen()
     print("Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is.") 
     timer_5()
     clear_screen()
-    bestelling_bolletjes()
+    bestelling_bolletjes(aantal_bolletjes,verpakking_bolletjes)
     
 
 
 # ------------------------------------------------------stap 1--------------------------------------------------------------------------------------
 
     
-def bestelling_bolletjes():                                                                          # def besteling bolletjes
+def bestelling_bolletjes(verpakking_bolletjes,aantal_bolletjes):                                                                          # def besteling bolletjes
     aantal_bolletjes= int(input("hoeveel bolletjes wilt u ? : "))
     smaken(aantal_bolletjes)
     if int (aantal_bolletjes) > 0 and int(aantal_bolletjes) < 4:    
-        vraag_hoorntje_bakje(aantal_bolletjes)
+        vraag_hoorntje_bakje(aantal_bolletjes,verpakking_bolletjes)
     elif int (aantal_bolletjes) > 3 and int (aantal_bolletjes) < 9:
-        foute_bestelling(aantal_bolletjes)
+        grote_bestelling(aantal_bolletjes,verpakking_bolletjes)
     else:
-        print("sorry zukke grote bakken hebben we niet ") + bestelling_bolletjes()
+        print("sorry zukke grote bakken hebben we niet ") + bestelling_bolletjes(verpakking_bolletjes,aantal_bolletjes)
     
              
 # ------------------------------------------------------stap 2----------------------------------------------------------------------------------------
 
 
-def vraag_hoorntje_bakje(aantal_bolletjes):                                                             # def vraag hoorntje bakje
+def vraag_hoorntje_bakje(aantal_bolletjes,verpakking_bolletjes):                                                             # def vraag hoorntje bakje
     
     verpakking_bolletjes=input("wilt u deze  " + str(aantal_bolletjes) + " bolletejes in een : A = bakje  B = hoorntje " + ":  maak u keuze " )
     if verpakking_bolletjes=="a":
@@ -64,24 +69,26 @@ def vraag_hoorntje_bakje(aantal_bolletjes):                                     
 
         goede_bestelling(verpakking_bolletjes,aantal_bolletjes)
     else:
-        print(" u kunt allen kiezen tussen a of b  : ") + vraag_hoorntje_bakje()
+        print(" u kunt allen kiezen tussen a of b  : ") + vraag_hoorntje_bakje(verpakking_bolletjes,aantal_bolletjes)
     
         
    
 
-#------------------------------------------------------foute bestellng --------------------------------------------------------------------------------------    
-def foute_bestelling(aantal_bolletjes):                                                            # def foute bestelling
-   uw_bestelling=("dan krijgt u van mij een bakje  met  " + str(aantal_bolletjes) + " bolletjes ")  
-   print (uw_bestelling)
+#------------------------------------------------------grote bestellng --------------------------------------------------------------------------------------    
+def grote_bestelling(aantal_bolletjes,verpakking_bolletjes):                                                            # def foute bestelling
+   verpakking_bolletjes="bakje"
+   goede_bestelling(aantal_bolletjes,verpakking_bolletjes)
+   
+
 
     
 
 
 #--------------------------------------------------------stap 3---------------------------------------------------------------------------------------------
 def goede_bestelling(verpakking_bolletjes,aantal_bolletjes):                                         # def foute bestelling
-    complete_bestelling = input("hier is uw " + verpakking_bolletjes + " met uw " + str (aantal_bolletjes) + " bolletjes" + "wilt u nog meer bestellen : Y / N " + " maak u keuze ")
+    complete_bestelling = input("hier is uw " + str(verpakking_bolletjes) + " met uw " + str (aantal_bolletjes) + " bolletjes" + "wilt u nog meer bestellen : Y / N " + " maak u keuze ")
     if complete_bestelling=="Y":
-        welkom()
+        welkom(verpakking_bolletjes,aantal_bolletjes)
     elif complete_bestelling=="N":
         print("bedankt en tot ziens")    
     else:
@@ -121,12 +128,22 @@ def smaken(aantal_bolletjes):
     else:
         ("sorry antwoord met j / n ") + smaken(aantal_bolletjes)
 
+welkom(verpakking_bolletjes,aantal_bolletjes)
 
 
 
 
 
-welkom()
+
+
+
+
+
+
+
+# Bolletjes (ongeacht de smaak) zijn €1,10 per stuk
+# Horrentjes zijn €1,25 per stuk
+# Bakjes zijn €0,75 per stuk
 
 
 
