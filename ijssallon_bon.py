@@ -150,10 +150,10 @@ def bon(totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,):
     print("------------------Papi Gelato----------------")
     print(" ")
     print("bolletjes " + str(totaal_bolletjes) + " " + "x" + " " + "€ 1,10" + " " + " " + " " + "= " + "€ " + (str(format(totaal_bolletjes*prijs_bolletjes,'.2f'))))
-    print("Horentje  " + str(totaal_hoorntjes) + " " + "x" + " " + "€ 1.25" + " " + " " + " " + "= " + "€ " + (str(totaal_hoorntjes*prijs_hoorntje)))
-    print("bakjes    " + str(totaal_bakjes)    + " " + "x" + " " + "€ 1.25" + " " + " " + " " + "= " + "€ " + (str(totaal_bakjes*prijs_bakje))) 
+    print("Horentje  " + str(totaal_hoorntjes) + " " + "x" + " " + "€ 1.25" + " " + " " + " " + "= " + "€ " + (str(format(totaal_hoorntjes*prijs_hoorntje,'.2f'))))
+    print("bakjes    " + str(totaal_bakjes)    + " " + "x" + " " + "€ 1.25" + " " + " " + " " + "= " + "€ " + (str(format(totaal_bakjes*prijs_bakje,'.2f')))) 
     print("                       " + "-------- + ")
-    print("totaal " + "                " + "= " + "€ " + str(format(prijs_bakje+prijs_bolletjes+prijs_hoorntje)))
+    print("totaal " + "                " + "= " + "€ " + str(format(prijs_bakje+prijs_bolletjes+prijs_hoorntje,'.2f')))
 
 
 
