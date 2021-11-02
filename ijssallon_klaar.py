@@ -114,7 +114,7 @@ def bestelling_bolletjes(eenheid,verpakking_bolletjes,aantal_bolletjes,totaal_bo
     smaken(aantal_bolletjes,eenheid)
     
     
-    topings(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
+    topings(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
     
 
 
@@ -123,7 +123,7 @@ def bestelling_bolletjes(eenheid,verpakking_bolletjes,aantal_bolletjes,totaal_bo
 # ------------------------------------------------------stap 2 / def vraag hoorntje bakje ---------------------------------------------------------------------------------------
 
 
-def vraag_hoorntje_bakje(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus):
+def vraag_hoorntje_bakje(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus):
     
                                                    
     verpakking_bolletjes=input("wilt u deze  " + str(aantal_bolletjes) + " bolletejes in een : A = bakje  B = hoorntje " + ":  maak u keuze " )
@@ -132,17 +132,17 @@ def vraag_hoorntje_bakje(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,
         print("u heeft gekozen voor een bakje ")
         verpakking_bolletjes = "bakje"
 
-        goede_bestelling(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
+        goede_bestelling(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
     elif verpakking_bolletjes=="b":
         totaal_hoorntjes = totaal_hoorntjes + 1
         print("u heeft gekozen voor een hoorntje") 
         verpakking_bolletjes="hoorntje"
 
-        goede_bestelling(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
+        goede_bestelling(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
     else:
         print(" u kunt allen kiezen tussen a of b  : ") 
         
-        vraag_hoorntje_bakje(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
+        vraag_hoorntje_bakje(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
     
         
    
@@ -159,11 +159,11 @@ def grote_bestelling(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,tota
 
 
 #--------------------------------------------------------stap 3 / goede bestelling ---------------------------------------------------------------------------------------------
-def goede_bestelling(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus):                                         # def foute bestelling
+def goede_bestelling(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus):                                         # def foute bestelling
     complete_bestelling = input("hier is uw " + str(verpakking_bolletjes) + " met uw " + str (aantal_bolletjes) + " bolletjes" + "wilt u nog meer bestellen : Y / N " + " maak u keuze ")
     if complete_bestelling=="Y":
     
-        welkom(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
+        welkom(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
     elif complete_bestelling=="N":
         print("bedankt en tot ziens")    
         bon(totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
@@ -213,7 +213,7 @@ def smaken(aantal_bolletjes,eenheid):
 
 #---------------------------------------------------------------------def toppings----------------------------------------------------------------------------------
 
-def topings(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus):
+def topings(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus):
 
     print(kies_topping)
     vraag_topping = input("kies u topping uit ")
@@ -245,11 +245,11 @@ def topings(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes
         topings(totaal_topping_slagroom)
 
     if int (aantal_bolletjes) > 0 and int(aantal_bolletjes) < 4:    
-        vraag_hoorntje_bakje(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
+        vraag_hoorntje_bakje(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
     elif int (aantal_bolletjes) > 3 and int (aantal_bolletjes) < 9:
-        grote_bestelling(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
+        grote_bestelling(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
     else:
-        print("sorry zukke grote bakken hebben we niet ") + bestelling_bolletjes(aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
+        print("sorry zukke grote bakken hebben we niet ") + bestelling_bolletjes(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
     
 
 #-------------------------------------------------------------------- def bon----------------------------------------------------------------------------------------------------------------                                      
