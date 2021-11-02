@@ -5,16 +5,28 @@ import time
 #-----------------------------------------------------------variabelen voor bon ---------------------------------------------
 
 Gekozen_smaken = []
-verpakking_bolletjes = "geen"
-aantal_bolletjes = 0
-totaal_bolletjes = 0
-totaal_bakjes = 0
-totaal_hoorntjes = 0
+
+
 prijs_bolletjes = 1.10
 prijs_bakje =  0.75
 prijs_hoorntje = 1.25
 
+
+
 #----------------------------------------------------------------------------------------------------------------------------
+kies_topping = """-----------------------------------------------------------------------------------------------------------
+
+welke topping wilt u kies uit 
+
+a = Geen 
+b = Slagroom 
+c = Sprinkels 
+d = Caramel saus 
+
+
+"""
+
+
 
 kies_smaken = """------------------------------------------------------------------------------------------------------------
 
@@ -36,7 +48,12 @@ def timer_5():
 
 
 
-def welkom(verpakking_bolletjes,aantal_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes):                                                                                       # def welom 
+def welkom():
+    verpakking_bolletjes = "geen"
+    aantal_bolletjes = 0
+    totaal_bolletjes = 0
+    totaal_bakjes = 0
+    totaal_hoorntjes = 0                                                                                       # def welom 
     clear_screen()
     print("Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is.") 
     timer_5()
@@ -141,6 +158,12 @@ def smaken(aantal_bolletjes):
         smaken(aantal_bolletjes)  
     else:
         ("sorry antwoord met j / n ") + smaken(aantal_bolletjes)
+
+
+def topings():
+    print(kies_topping)
+
+
                                         
     
     
@@ -157,8 +180,7 @@ def bon(totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,):
 
 
 
-
-welkom(verpakking_bolletjes,aantal_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes)
+welkom()
 
 
 
