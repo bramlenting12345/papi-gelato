@@ -102,7 +102,7 @@ def type_klant(eenheid,verpakking_bolletjes,aantal_bolletjes,totaal_bolletjes,to
         eenheid="liters" 
         bestelling_bolletjes(eenheid,verpakking_bolletjes,aantal_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
     else:
-        print("sorry is snap u niet ") 
+        print("Sorry dat is geen optie die we aanbieden...” ") 
         type_klant(eenheid,verpakking_bolletjes,aantal_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus) 
 
 # ------------------------------------------------------stap 1 / def bestelling bolletjes -------------------------------------------------------------------------------------
@@ -140,7 +140,7 @@ def vraag_hoorntje_bakje(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bo
 
         goede_bestelling(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
     else:
-        print(" u kunt allen kiezen tussen a of b  : ") 
+        print(" Sorry dat is geen optie die we aanbieden...” ") 
         
         vraag_hoorntje_bakje(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom,totaal_topping_sprinkels,totaal_topping_caramel_saus)
     
@@ -170,7 +170,7 @@ def goede_bestelling(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bollet
 
 
     else:
-        print("Sorry dat snap ik niet") + goede_bestelling(verpakking_bolletjes,aantal_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom)
+        print("Sorry dat is geen optie die we aanbieden...”") + goede_bestelling(verpakking_bolletjes,aantal_bolletjes,totaal_bolletjes,totaal_bakjes,totaal_hoorntjes,totaal_topping_slagroom)
     
 
 
@@ -190,7 +190,7 @@ def smaken(aantal_bolletjes,eenheid):
         elif smaak_keuze=="v":
             Gekozen_smaken.append("Vanilie")
         else:
-            print("sorry dat snap ik niet ") + smaken()                    
+            print("Sorry dat is geen optie die we aanbieden.. ") + smaken()                    
 
     print("u heeft de volgende smaken gekozen: ")
 
@@ -207,7 +207,7 @@ def smaken(aantal_bolletjes,eenheid):
     elif check_vraag=="n":
         smaken(aantal_bolletjes)  
     else:
-        ("sorry antwoord met j / n ") + smaken(aantal_bolletjes)
+        ("Sorry dat is geen optie die we aanbieden...") + smaken(aantal_bolletjes)
 
 
 
@@ -240,7 +240,7 @@ def topings(eenheid,aantal_bolletjes,verpakking_bolletjes,totaal_bolletjes,totaa
        totaal_topping_caramel_saus = totaal_topping_caramel_saus + 1     
 
     else:
-        print("sorry is snap u niet ")
+        print("Sorry dat is geen optie die we aanbieden...” ")
         print(" ")
         topings(totaal_topping_slagroom)
 
